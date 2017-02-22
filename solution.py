@@ -115,7 +115,7 @@ def naked_twins(values):
         peersA = peers[nakedtwins[n][0]]
         peersB = peers[nakedtwins[n][1]]
         intersect_peers = peersA.intersection(peersB)
-        # Look up the peers values in the values dictionary; eliminate the naked twins as possibilities for their peers
+        # Look up the peers values in the values dictionary; eliminate the naked twin digits from their peers
         for peer_values in intersect_peers:
             if len(values[peer_values]) > 2:
                 for digits in values[nakedtwins[n][0]]:
