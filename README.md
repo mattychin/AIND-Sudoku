@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: In sudoku, a "naked twin" refers to a set of two candidate digits located in two boxes that share at least one unit.  If, for example, we have {'A5': '13', 'A6': '13',...} then we can deduce that 1 and 3 must be in A5 and A6.  Even though we do not yet know which digit belongs to which box, we can still eliminate the same digits from all the other peer boxes.  In order to perform constraint propagation to solve this problem, boxes that are peers to each other and have the same 2 possible digits will first need to be identified.  Then, the two numbers will need to be eliminated from all other boxes that are peers to the two previously identified boxes.  Therefore, this strategy reduces the number of possibilities for the two boxes' peers, and the peers of those peers, and so on - hence constraint propagation.  The code becomes even more efficient in solving sudoku puzzles when the naked twins strategy is coupled to other strategies such as elminiate and only choice.
+A: In sudoku, a "naked twin" refers to a set of two candidate digits located in two boxes that share at least one unit.  If, for example, we have {'A5': '13', 'A6': '13',...} then we can deduce that 1 and 3 must be in A5 and A6.  Even though we do not yet know which digit belongs to which box, we can still eliminate the same digits from all other boxes in the same unit.  In order to perform constraint propagation to solve this problem, boxes that are peers to each other and have the same 2 possible digits will first need to be identified.  Then, the two numbers will need to be eliminated from all other boxes that are peers to the two previously identified boxes.  Therefore, this strategy reduces the number of possibilities for the two boxes' peers, and the peers of those peers, and so on - hence constraint propagation.  The code becomes even more efficient in solving sudoku puzzles when the naked twins strategy is coupled to other strategies such as elminiate and only choice.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: To account for the diagonal constraint, simply include it as an additional unit in the Python code and then update the unit list with it.  By doing so, contraints will be propagated to the diagonal units as the code iterates through all declared units.
 
 ### Install
 
