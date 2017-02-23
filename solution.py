@@ -112,9 +112,9 @@ def naked_twins(values):
     nakedtwins = [[boxA, boxB] for boxA in suspected_twins for boxB in peers[boxA] if values[boxA] == values[boxB]]
 
     for n in range(1, len(nakedtwins)):
-        peersA = peers[nakedtwins[n][0]]
-        peersB = peers[nakedtwins[n][1]]
-        intersect_peers = peersA.intersection(peersB)
+        peersA = peers[nakedtwins[n][0]]  # access peers of boxA
+        peersB = peers[nakedtwins[n][1]]  # access peers of boxB
+        intersect_peers = peersA.intersection(peersB) # Find peers common to both peersA and peersB by performing the set operation peersA & peersB
         # Look up the peers values in the values dictionary; eliminate the naked twin digits from their peers
         for peer_values in intersect_peers:
             if len(values[peer_values]) > 2:
